@@ -1,0 +1,29 @@
+<!-- name starts from underscore means it's a partial of the page
+it's just a portion of a page -->
+
+
+<%= form_with model: blog_post do |form| %>
+    <% if form.object.errors.any? %>
+    <div>
+        <% form.object.errors.full_messages.each do |message| %>
+            <div>
+                <%= message %>
+            </div>
+        <% end %>
+
+    </div>
+<% end %>
+
+    <div>
+        <%= form.label :title %>
+        <%= form.text_field :title %>
+    </div>
+
+    <div>
+        <%= form.label :body %>
+        <%= form.text_area :body %>
+    </div>
+
+        <%= form.button %>
+
+<% end %>

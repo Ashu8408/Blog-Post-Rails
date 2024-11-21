@@ -1,0 +1,37 @@
+rails is smart enough to automatically set routes, we just need to mention it's object in routes
+as "   get "/blog_posts/:id", to: "blog_posts#show", as: :blog_post"
+
+#<ActiveModel::Name:0x000001fd9fb21f58
+ @collection="blog_posts",
+ @element="blog_post",
+ @human="Blog post",
+ @i18n_key=:blog_post,
+ @klass=BlogPost(id: integer, title: string, body: text, created_at: datetime, updated_at: datetime),
+ @name="BlogPost",
+ @param_key="blog_post",
+ @plural="blog_posts",
+ @route_key="blog_posts",
+ @singular="blog_post",
+ @singular_route_key="blog_post",
+ @uncountable=false>
+
+
+
+
+
+
+ <h1>New Blog</h1>
+
+<%= form_with model: @blog_post do |form| %>
+  <div>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :body %>
+    <%= form.text_area :body %>
+  </div>
+
+  <%= form.submit "Create Blog Post" %>
+<% end %>
